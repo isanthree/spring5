@@ -1,5 +1,6 @@
 package com.isanthree.spring5.testdemo;
 
+import com.isanthree.spring5.bean.Orders;
 import com.isanthree.spring5.collectiontype.Book;
 import com.isanthree.spring5.collectiontype.Course;
 import com.isanthree.spring5.collectiontype.Stu;
@@ -42,5 +43,21 @@ public class Spring5Test {
         Course course = context.getBean("myBean", Course.class);
 
         System.out.println(course);
+    }
+
+    @Test
+    public void testBean3() {
+        // 1.加载 spring 配置文件
+//        ApplicationContext context = new ClassPathXmlApplicationContext("bean4.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean4.xml");
+
+        // 2.获取配置文件创建的对象
+        Orders orders = context.getBean("orders", Orders.class);
+
+        System.out.println("第四步 获取创建 bean 实例对象");
+        System.out.println(orders);
+
+        // 手动让 bean 实例销毁
+        context.close();
     }
 }
