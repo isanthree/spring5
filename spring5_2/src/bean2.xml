@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--1.提取 list 集合类型属性的注入-->
+    <util:list id="listBook">
+        <value>数据结构与算法</value>
+        <value>计算机系统</value>
+        <value>编译原理</value>
+        <value>操作系统</value>
+        <value>数据库</value>
+        <value>计算机网络</value>
+    </util:list>
+
+    <!--2.提取 list 集合类型属性注入的使用-->
+    <bean id="book" class="com.isanthree.spring5.collectiontype.Book">
+        <property name="list" ref="listBook"></property>
+    </bean>
+</beans>
