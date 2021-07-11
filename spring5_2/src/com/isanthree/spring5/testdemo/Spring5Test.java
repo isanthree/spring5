@@ -1,5 +1,6 @@
 package com.isanthree.spring5.testdemo;
 
+import com.isanthree.spring5.autowire.Emp;
 import com.isanthree.spring5.bean.Orders;
 import com.isanthree.spring5.collectiontype.Book;
 import com.isanthree.spring5.collectiontype.Course;
@@ -34,6 +35,9 @@ public class Spring5Test {
         book.test();
     }
 
+    /**
+     * 测试 FactoryBean
+     */
     @Test
     public void testMyBean() {
         // 1.加载 spring 配置文件
@@ -45,6 +49,9 @@ public class Spring5Test {
         System.out.println(course);
     }
 
+    /**
+     * 演示 Bean 生命周期
+     */
     @Test
     public void testBean3() {
         // 1.加载 spring 配置文件
@@ -59,5 +66,18 @@ public class Spring5Test {
 
         // 手动让 bean 实例销毁
         context.close();
+    }
+
+    /**
+     * 测试 xml 自动装配
+     */
+    @Test
+    public void test4() {
+        // 1.加载 spring 配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean5.xml");
+
+        // 2.获取配置文件创建的对象
+        Emp emp = context.getBean("emp", Emp.class);
+        System.out.println(emp);
     }
 }
