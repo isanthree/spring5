@@ -1,7 +1,9 @@
 package com.isanthree.spring5.testdemo;
 
 import com.isanthree.spring5.collectiontype.Book;
+import com.isanthree.spring5.collectiontype.Course;
 import com.isanthree.spring5.collectiontype.Stu;
+import com.isanthree.spring5.factorybean.MyBean;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -29,5 +31,16 @@ public class Spring5Test {
 
         System.out.println(book);
         book.test();
+    }
+
+    @Test
+    public void testMyBean() {
+        // 1.加载 spring 配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean3.xml");
+
+        // 2.获取配置文件创建的对象
+        Course course = context.getBean("myBean", Course.class);
+
+        System.out.println(course);
     }
 }
