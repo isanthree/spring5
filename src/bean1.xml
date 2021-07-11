@@ -15,6 +15,14 @@
         -->
         <property name="BName" value="易筋经"></property>
         <property name="BAuthor" value="达摩老祖"></property>
+<!--        <property name="Address"><null/></property> &lt;!&ndash;给属性 address 设置 null 值&ndash;&gt;-->
+        <!--当属性值包含特殊符号时，
+            1. 把<>进行转义 &lt; &gt;
+            2. 把带特殊符号内容写到CDATA
+        -->
+        <property name="Address">
+            <value><![CDATA[<<少林寺>>]]></value>
+        </property>
     </bean>
 
     <!-- p 名称空间注入，简化基于 xml 的配置方式-->

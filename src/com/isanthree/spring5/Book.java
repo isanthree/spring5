@@ -11,6 +11,7 @@ public class Book {
      */
     private String bName;
     private String bAuthor;
+    private String address;
 
     /**
      * set 方法注入：创建属性对应的 set 方法
@@ -24,13 +25,16 @@ public class Book {
         this.bAuthor = bAuthor;
     }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public static void main(String[] args) {
         Book book = new Book();
         book.setBName("abc");
     }
 
     public void testDemo() {
-        System.out.println(bName + "::" + bAuthor);
+        System.out.println(bName + "::" + bAuthor + "::" + address);
     }
-
 }
