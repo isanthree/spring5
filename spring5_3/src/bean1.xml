@@ -11,4 +11,21 @@
     -->
     <context:component-scan base-package="com.isanthree"></context:component-scan>
 
+    <!--示例 1
+        use-default-filters="false" 表示现在不使用默认的 filter，使用自己配置的 filter
+        context:include-filter，设置扫描哪些内容
+    -->
+<!--    <context:component-scan base-package="com.isanthree" use-default-filters="false">-->
+<!--        <context:include-filter type="annotation"-->
+<!--                                expression="org.springframework.stereotype.Controller"/>  &lt;!&ndash;只扫描 Controller 注解&ndash;&gt;-->
+<!--    </context:component-scan>-->
+
+    <!--示例 2
+        下面配置扫描包所有内容
+        context:exclude-filter： 设置哪些内容不进行扫描
+    -->
+<!--    <context:component-scan base-package="com.isanthree">-->
+<!--        <context:exclude-filter type="annotation"-->
+<!--                                expression="org.springframework.stereotype.Controller"/>  &lt;!&ndash;不扫描 Controller 注解&ndash;&gt;-->
+<!--    </context:component-scan>-->
 </beans>
