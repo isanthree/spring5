@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/spring5.iml" filepath="$PROJECT_DIR$/spring5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_1/spring5_1.iml" filepath="$PROJECT_DIR$/spring5_1/spring5_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_2/spring5_2.iml" filepath="$PROJECT_DIR$/spring5_2/spring5_2.iml" />
     </modules>
   </component>
 </project>

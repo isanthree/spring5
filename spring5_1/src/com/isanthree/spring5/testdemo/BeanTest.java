@@ -66,4 +66,5 @@ public class BeanTest {
         System.out.println(emp);
         emp.add();
     }
+
 }
