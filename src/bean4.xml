@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 注入属性三：级联赋值 第一种写法-->
+    <bean id="emp1" class="com.isanthree.spring5.bean.Emp">
+        <!--设置两个普通属性-->
+        <property name="EName" value="John"></property>
+        <property name="gender" value="man"></property>
+        <!--设置对象类型属性：级联赋值-->
+        <property name="dept" ref="dept"></property>
+    </bean>
+    <bean id="dept" class="com.isanthree.spring5.bean.Dept">
+        <property name="DName" value="财务部"></property>
+    </bean>
+
+    <!-- 注入属性三：级联赋值 第二种写法-->
+    <bean id="emp2" class="com.isanthree.spring5.bean.Emp">
+        <!--设置两个普通属性-->
+        <property name="EName" value="John"></property>
+        <property name="gender" value="man"></property>
+        <!--设置对象类型属性：级联赋值-->
+        <property name="dept" ref="dept"></property>
+        <property name="dept.DName" value="技术部"></property> <!--这种写法需要在 Emp 类中先生成 getDept() 方法-->
+    </bean>
+
+</beans>
