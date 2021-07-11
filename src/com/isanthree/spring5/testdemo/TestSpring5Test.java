@@ -37,6 +37,18 @@ public class TestSpring5Test {
     }
 
     @Test
+    public void testBookP() {
+        // 1.加载spring配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
+
+        // 2.获取配置创建的对象
+        Book book = context.getBean("book_p", Book.class);
+
+        System.out.println(book);
+        book.testDemo();
+    }
+
+    @Test
     public void testOrders() {
         // 1.加载spring配置文件
         ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
