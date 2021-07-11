@@ -7,4 +7,8 @@
     <bean id="orders" class="com.isanthree.spring5.bean.Orders" init-method="initMethod" destroy-method="destroyMethod">
         <property name="OName" value="手机"></property>
     </bean>
+
+    <!-- Bean 生命周期：配置后置处理器 -->
+    <!-- 配置了后置处理器后，所有的 Bean 都会加入后置处理器，即 MyBeanPost 类将会得到执行 -->
+    <bean id="myBeanPost" class="com.isanthree.spring5.bean.MyBeanPost"></bean>
 </beans>
