@@ -1,6 +1,7 @@
 package com.isanthree.spring5.testdemo;
 
 import com.isanthree.spring5.Book;
+import com.isanthree.spring5.Orders;
 import com.isanthree.spring5.User;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -35,4 +36,15 @@ public class TestSpring5Test {
         book.testDemo();
     }
 
+    @Test
+    public void testOrders() {
+        // 1.加载spring配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
+
+        // 2.获取配置创建的对象
+        Orders orders = context.getBean("orders", Orders.class);
+
+        System.out.println(orders);
+        orders.ordersTest();
+    }
 }

@@ -16,4 +16,10 @@
         <property name="BAuthor" value="达摩老祖"></property>
     </bean>
 
+    <!--使用有参构造注入属性-->
+    <bean id="orders" class="com.isanthree.spring5.Orders">
+        <constructor-arg name="orderName" value="Huawei"></constructor-arg>
+        <constructor-arg name="address" value="China"></constructor-arg>
+    </bean>
+
 </beans>
