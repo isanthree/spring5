@@ -2,6 +2,7 @@ package com.isanthree.spring5.aopanno;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Aspect  // 生成代理对象
+@Order(3)  // 针对有多个增强类的情况，此处设置执行的优先级，Order(3) 为第三优先级
 public class UserProxy {
 
     /**
