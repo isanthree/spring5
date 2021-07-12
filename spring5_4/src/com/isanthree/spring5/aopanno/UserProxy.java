@@ -13,10 +13,18 @@ import org.springframework.stereotype.Component;
 public class UserProxy {
 
     /**
+     * 对相同的切入点进行抽取
+     */
+    @Pointcut(value = "execution(* com.isanthree.spring5.aopanno.User.add(..))")
+    public void pointDemo() {
+
+    }
+
+    /**
      * 前置通知
      * Before 注解表示作为前置通知，'*' 是权限修饰符
      */
-    @Before(value = "execution(* com.isanthree.spring5.aopanno.User.add(..))")
+    @Before(value = "pointDemo()")  // 相同切入点抽取示例，下同，均可换成 value = "pointDemo()"
     public void before() {
         System.out.println("before（前置通知）：add 方法前置通知.........");
     }
