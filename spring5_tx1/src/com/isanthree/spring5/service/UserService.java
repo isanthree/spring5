@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Transactional(propagation = Propagation.REQUIRED) 注解：为该类里面的所有方法都添加事务
+ * transactionManager：值为 "transactionManager"，表示指定该事务管理器
  * Propagation：事务传播行为
  * Isolation：事务隔离级别（REPEATABLE_READ：可重复读）
  * timeout：超时时间（-1 是默认值，即不设置超时时间）
@@ -17,8 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
  * noRollbackFor：不回滚
  */
 @Service
-@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ,
-        timeout = -1, readOnly = false)
+@Transactional(transactionManager = "transactionManager",
+        propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT)
 public class UserService {
     // 注入 Dao
     @Autowired
